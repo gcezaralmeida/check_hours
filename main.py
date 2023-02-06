@@ -24,7 +24,7 @@ def extra_hours():
             entrada = datetime.datetime.strptime(i[2:], "%d/%m/%Y %H:%M")
         elif i[0] == "S":
             saida = datetime.datetime.strptime(i[2:], "%d/%m/%Y %H:%M")
-            if saida.hour == 0:
+            if saida.hour == 0 and saida.min == 0:
                 saida = datetime.datetime.strptime(i[2:], "%d/%m/%Y %H:%M") - datetime.timedelta(seconds=1) + datetime.timedelta(days=1)
         else:
             print("Não foi possível identificar o tipo de hora.")
